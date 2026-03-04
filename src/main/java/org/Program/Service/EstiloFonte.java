@@ -2,6 +2,8 @@ package org.Program.Service;
 
 import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 
+// Possivel criar um BUIDER aqui também gerando encurtamento
+
 public class EstiloFonte {
         private String texto;
         private String fonte;
@@ -18,7 +20,6 @@ public class EstiloFonte {
         this.alinhamento = alinhamento;
 
     }
-
 
     public String getTexto() {
         return texto;

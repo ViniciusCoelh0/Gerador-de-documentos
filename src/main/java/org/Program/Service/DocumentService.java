@@ -87,20 +87,19 @@ public class DocumentService {
         adicionarParagrafo(documento, texto, estilo);
 
     }
-
-    public void gerarDocumentoCompleto(String titulo, String subtitulo, String texto){
-
-        try(XWPFDocument documento = new XWPFDocument();
-            FileOutputStream out = new FileOutputStream("documento.docx"))
-        {
-            adicionarTitulo(documento, titulo, 22, Alinhamento.CENTRO);
-            adicionarSubtitulo(documento, subtitulo, 14);
-            adicionarTexto(documento, texto, 12);
-
-            documento.write(out);
-
-        } catch (IOException e) {
-            throw new RuntimeException("Erro ao gerar documento", e);
-        }
-    }
+//    public void gerarDocumentoCompleto(String titulo, String subtitulo, String texto){
+//
+//        try(XWPFDocument documento = new XWPFDocument();
+//            FileOutputStream out = new FileOutputStream("documento.docx"))
+//        {
+//            adicionarTitulo(documento, titulo, 22, Alinhamento.CENTRO);
+//            adicionarSubtitulo(documento, subtitulo, 14);
+//            adicionarTexto(documento, texto, 12);
+//
+//            documento.write(out);
+//
+//        } catch (IOException e) {
+//            throw new RuntimeException("Erro ao gerar documento", e);
+//        }
+//    }
 }
