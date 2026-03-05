@@ -1,4 +1,4 @@
-package org.Program.Enum;
+package org.program.Enum;
 
 public enum Alinhamento {
     DIREITA,
