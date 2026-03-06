@@ -14,7 +14,6 @@ public class DocumentBuilder {
 
     private final List<ElementoDocumento> elementos = new ArrayList<>();
 
-
     //Titulo
     public DocumentBuilder titulo(String texto){
         EstiloFonte estilo = new EstiloFonte.Builder()
@@ -70,7 +69,7 @@ public class DocumentBuilder {
 
     public void criar(String nomeArquivo){
         try (XWPFDocument documento = new XWPFDocument();
-        FileOutputStream out = new FileOutputStream(nomeArquivo)){
+        FileOutputStream out = new FileOutputStream(nomeArquivo + ".docx")){
 
             for (ElementoDocumento elemento : elementos){
                 elemento.aplicar(documento);

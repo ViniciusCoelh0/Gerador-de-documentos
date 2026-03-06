@@ -5,6 +5,7 @@ import org.program.Style.EstiloFonte;
 import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Main {
@@ -39,12 +40,16 @@ public class Main {
                 .tamanho(16)
                 .build();
 
+        Path caminho = Path.of("C:/DEV/JAVA/eclipse/LPP/FormatadorDeTexto/Arquivos/"); //<-- Se quiser criar ele em uma pasta especifica, colocar o caminho aqui
+
+        System.out.println();
+
        db.titulo("Documento de Teste", titulo)
                 .subtitulo("Subtitulo")
                 .paragrafo("Parágrafo estilizado", estilo1)
                .paragrafo("Parágrafo estilizado", estilo2)
-                .criar("teste.docx");
+                .criar(caminho.toString() + "arquivo");
 
-
+        System.out.println("Documento gerado com sucesso!");
     }
 }
