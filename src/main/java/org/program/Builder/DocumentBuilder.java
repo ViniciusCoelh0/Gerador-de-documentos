@@ -2,6 +2,7 @@ package org.program.Builder;
 
 import org.program.Document.ElementoDocumento;
 import org.program.Document.ParagrafoElemento;
+import org.program.Document.QubraLinhaElemnto;
 import org.program.Style.EstiloFonte;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
@@ -66,6 +67,13 @@ public class DocumentBuilder {
     }
 
     //-------------
+
+    //Quebra de linha
+    public DocumentBuilder quebraLinha(String texto){
+        elementos.add(new QubraLinhaElemnto());
+        return this;
+    }
+
 
     public void criar(String nomeArquivo){
         try (XWPFDocument documento = new XWPFDocument();
