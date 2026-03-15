@@ -1,11 +1,13 @@
 package org.program.Builder;
 
 import org.program.Document.ElementoDocumento;
+import org.program.Document.ListaElemento;
 import org.program.Document.ParagrafoElemento;
 import org.program.Document.QubraLinhaElemnto;
 import org.program.Style.EstiloFonte;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
+import javax.print.Doc;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -74,6 +76,21 @@ public class DocumentBuilder {
         return this;
     }
 
+    //Lista
+    public DocumentBuilder lista(List<String> itens){
+        EstiloFonte estilo = new EstiloFonte.Builder()
+                .tamanho(12)
+                .build();
+
+        return lista(itens, estilo);
+    }
+
+    public DocumentBuilder lista(List<String> itens, EstiloFonte estilo){
+        elementos.add(new ListaElemento(itens, estilo));
+        return this;
+    }
+
+    //-------------
 
     public void criar(String nomeArquivo){
         try (XWPFDocument documento = new XWPFDocument();

@@ -6,6 +6,7 @@ import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -40,15 +41,27 @@ public class Main {
                 .tamanho(16)
                 .build();
 
+        List<String> itens = List.of(
+                "Primeiro item",
+                "Segundo item",
+                "Terceiro item"
+        );
+
         Path caminho = Path.of("C:/DEV/JAVA/eclipse/LPP/FormatadorDeTexto/Arquivos/"); //<-- Se quiser criar ele em uma pasta especifica, colocar o caminho aqui
 
         System.out.println();
 
-       db.titulo("Documento de Teste", titulo)
-                .subtitulo("Subtitulo")
-                .paragrafo("Parágrafo estilizado", estilo1)
-               .paragrafo("Parágrafo estilizado", estilo2)
-                .criar(caminho.toString() + "arquivo");
+//       db.titulo("Documento de Teste", titulo)
+//                .subtitulo("Subtitulo")
+//                .paragrafo("Parágrafo estilizado", estilo1)
+//               .paragrafo("Parágrafo estilizado", estilo2)
+//                .criar(caminho.toString() + "arquivo");
+
+        db.titulo("Documento de Teste")
+                .paragrafo("Exemplo de lista:")
+                .lista(itens)
+                .criar("teste.docx");
+
 
         System.out.println("Documento gerado com sucesso!");
     }
