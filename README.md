@@ -74,6 +74,14 @@ EstiloFonte titulo = new EstiloFonte.Builder()
                 .paragrafo("Parágrafo estilizado", estilo1)
                 .paragrafo("Parágrafo estilizado", estilo2)
                 .criar("exemple.docx");
+
+// List
+       db.titulo("Documento de Teste")
+                .paragrafo("Exemplo de lista:")
+                .lista(itens)
+                .criar("teste.docx");
+
+
 ```
 
 ---
